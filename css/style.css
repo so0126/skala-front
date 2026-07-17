@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Serif+KR:wght@700;1000..900&display=swap');
+
+/* ===== Design Tokens ===== */
+:root {
+  --deep-navy: #0B1F3A;
+  --navy-blue: #163A63;
+  --primary-blue: #2563EB;
+  --light-blue: #DCEBFF;
+  --bg: #F7F9FC;
+  --white: #FFFFFF;
+  --text: #132238;
+  --sub-text: #64748B;
+  --border: #E2E8F0;
+
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow: 0 1px 3px rgba(11, 31, 58, 0.08);
+  --shadow-card: 0 2px 8px rgba(11, 31, 58, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== Base ===== */
+body {
+  font-family: "Gowun Batang", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  padding: 32px 16px;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+}
+
+header {
+  text-align: center;
+}
+
+header p {
+  color: var(--sub-text);
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--sub-text);
+  font-size: 0.9rem;
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-family: "Gowun Batang", "Noto Serif KR", serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  background-color: var(--deep-navy);
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  border-left: 4px solid var(--primary-blue);
+  padding: 4px 0 4px 12px;
+  margin: 28px 0 14px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy-blue);
+  margin: 20px 0 10px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+strong {
+  color: var(--navy-blue);
+}
+
+code {
+  font-size: 0.9em;
+  background-color: var(--light-blue);
+  color: var(--navy-blue);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+blockquote {
+  margin: 0;
+  padding: 12px 16px;
+  background-color: var(--bg);
+  border-left: 4px solid var(--light-blue);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--sub-text);
+}
+
+mark {
+  background-color: var(--light-blue);
+  color: var(--navy-blue);
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
+small {
+  color: var(--sub-text);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Nav ===== */
+nav {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  text-align: center;
+}
+
+nav h2 {
+  border-left: none;
+  padding: 0;
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--navy-blue);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* ===== Lists ===== */
+main ul,
+main ol,
+aside ul {
+  padding-left: 22px;
+}
+
+main li,
+aside li {
+  margin-bottom: 6px;
+}
+
+dl {
+  margin: 0;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--navy-blue);
+  margin-top: 12px;
+}
+
+dd {
+  margin: 0 0 0 16px;
+  color: var(--sub-text);
+}
+
+/* ===== Tables ===== */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto 8px;
+  font-size: 0.92rem;
+}
+
+caption {
+  font-weight: 700;
+  color: var(--navy-blue);
+  padding-bottom: 10px;
+}
+
+thead th {
+  background-color: var(--deep-navy);
+  color: var(--white);
+  font-weight: 500;
+  padding: 12px 8px;
+  border: 1px solid var(--deep-navy);
+}
+
+tbody th {
+  background-color: var(--light-blue);
+  color: var(--navy-blue);
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 10px 8px;
+  border: 1px solid var(--border);
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 8px;
+  border: 1px solid var(--border);
+}
+
+/* ===== Timetable cells ===== */
+.subject-math,
+.subject-chem,
+.subject-eng {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.subject-chapel,
+.subject-phys,
+.subject-culture {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.subject-math {
+  background-color: #1E3A8A;
+}
+
+.subject-chem {
+  background-color: #1D4ED8;
+}
+
+.subject-eng {
+  background-color: #2563EB;
+}
+
+.subject-chapel {
+  background-color: #60A5FA;
+}
+
+.subject-phys {
+  background-color: #93C5FD;
+}
+
+.subject-culture {
+  background-color: #BFDBFE;
+}
+
+.empty {
+  background-color: #F1F5F9;
+  color: #475569;
+}
+
+.lunch {
+  background-color: #E2E8F0;
+  color: #475569;
+  font-weight: 500;
+}
+
+.swatch {
+  width: 64px;
+}
+
+/* ===== Trip cards ===== */
+.trip-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary-blue);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.trip-card h2 {
+  margin-top: 0;
+  border-left: none;
+  padding-left: 0;
+}
+
+figure {
+  margin: 0 0 12px;
+}
+
+figcaption {
+  color: var(--sub-text);
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+
+audio {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ===== Forms ===== */
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 0 0 20px;
+}
+
+legend {
+  font-weight: 700;
+  color: var(--navy-blue);
+  background-color: var(--light-blue);
+  border-radius: 999px;
+  padding: 4px 16px;
+}
+
+label {
+  font-weight: 500;
+  color: var(--navy-blue);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  max-width: 420px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-top: 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-blue);
+  vertical-align: middle;
+  margin: 0 4px 0 12px;
+}
+
+/* ===== Buttons ===== */
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  border-radius: var(--radius);
+  padding: 11px 24px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+  background-color: var(--navy-blue);
+  border-color: var(--navy-blue);
+}
+
+button[type="reset"] {
+  color: var(--navy-blue);
+  background-color: var(--white);
+  border-color: var(--border);
+}
+
+button[type="reset"]:hover {
+  background-color: var(--bg);
+  border-color: var(--navy-blue);
+}
+
+/* ===== Aside ===== */
+aside section {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+aside p {
+  color: var(--sub-text);
+  font-size: 0.92rem;
+}
+
+aside ul {
+  margin-bottom: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  body {
+    padding: 16px 8px;
+  }
+
+  .container {
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    padding: 18px 16px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  thead th,
+  tbody th,
+  td {
+    padding: 8px 4px;
+  }
+}
