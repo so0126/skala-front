@@ -1,0 +1,155 @@
+<!-- 이 문서가 HTML5 문서임을 브라우저에게 알려주는 선언문입니다. 항상 첫 줄에 씁니다. -->
+<!DOCTYPE html>
+
+<!-- html: 문서 전체를 감싸는 최상위 태그입니다. lang="ko"는 이 문서가 한국어임을 알려줍니다. -->
+<html lang="ko">
+
+<!-- head: 화면에 보이지 않는 정보(제목, 인코딩 등)를 담는 영역입니다. -->
+<head>
+  <!-- meta charset: 글자를 어떤 방식으로 읽을지 정합니다. UTF-8이어야 한글이 깨지지 않습니다. -->
+  <meta charset="UTF-8" />
+
+  <!-- meta viewport: 휴대폰에서도 화면 너비에 맞게 보이도록 하는 설정입니다. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- title: 브라우저 탭에 표시되는 문서 제목입니다. (과제 1 요구사항) -->
+  <title>Welcome SKALA</title>
+</head>
+
+<!-- body: 실제로 화면에 보이는 모든 내용이 들어가는 영역입니다. -->
+<body>
+
+  <!-- header: 페이지 맨 위의 머리말 영역입니다. 제목과 소개 문장을 넣습니다. -->
+  <header>
+    <!-- h1: 문서에서 가장 중요한 제목입니다. 한 페이지에 하나만 쓰는 것이 원칙입니다. (과제 1 요구사항) -->
+    <h1>환영 인사</h1>
+
+    <!-- p: 하나의 문단을 나타냅니다. (과제 1 요구사항) -->
+    <p>스칼라에 오신 것을 환영합니다.</p>
+  </header>
+
+  <!-- hr: 내용이 바뀌는 지점을 가로줄로 구분해 줍니다. -->
+  <hr />
+
+  <!-- nav: 다른 페이지로 이동하는 메뉴 링크만 모아두는 영역입니다. (과제 8 요구사항) -->
+  <nav>
+    <!-- h2: h1 다음가는 중간 제목입니다. 각 영역의 이름표 역할을 합니다. -->
+    <h2>전체 메뉴</h2>
+
+    <!-- ul: 순서가 중요하지 않은 목록입니다. 메뉴는 순서가 의미 없으므로 ul을 씁니다. -->
+    <ul>
+      <!-- li: 목록 안의 항목 하나입니다. -->
+      <!-- a: 다른 페이지로 이동하는 링크입니다. href에 이동할 파일 경로를 적습니다. (과제 4 요구사항) -->
+      <li><a href="myProfile.html">나의 프로필</a></li>
+      <li><a href="myClass.html">나의 강의 일정</a></li>
+      <li><a href="myHoliday.html">나의 휴일</a></li>
+      <li><a href="myTrip.html">나의 여행지</a></li>
+      <li><a href="signUp.html">회원가입</a></li>
+    </ul>
+  </nav>
+
+  <hr />
+
+  <!-- main: 이 페이지의 핵심 본문입니다. 한 페이지에 하나만 씁니다. (과제 8 요구사항) -->
+  <main>
+
+    <!-- section: 메모장 하나로 묶이는 내용 덩어리입니다. -->
+    <section>
+      <h2>메모장</h2>
+      <!-- 서버가 없어서 메모는 이 브라우저 안에만 저장됩니다. -->
+      <!-- 다른 기기나 다른 사람에게는 보이지 않으므로 미리 안내해 둡니다. -->
+      <p>이 브라우저에만 저장되는 나만의 메모입니다. 새로고침해도 남아 있습니다.</p>
+
+      <!-- form: 입력칸을 하나로 묶는 상자입니다. -->
+      <!-- 서버로 보내지 않고 JavaScript가 직접 처리하므로 action을 적지 않았습니다. -->
+      <form id="memo-form">
+        <!-- label의 for와 textarea의 id를 같은 값으로 맞추면 -->
+        <!-- 글자를 눌러도 입력칸에 커서가 들어갑니다. -->
+        <label for="memo-text">메모 내용</label>
+
+        <br />
+
+        <!-- required: 비어 있으면 제출되지 않도록 브라우저가 막아줍니다. -->
+        <!-- maxlength: 입력할 수 있는 글자 수를 제한합니다. -->
+        <textarea id="memo-text" rows="3" cols="40" placeholder="메모할 내용을 적어 주세요" required maxlength="200"></textarea>
+
+        <br />
+
+        <!-- type="submit": 누르면 form의 submit 이벤트가 일어납니다. -->
+        <button type="submit">추가</button>
+      </form>
+
+      <!-- ul: 메모가 쌓이는 자리입니다. -->
+      <!-- 처음에는 비어 있고, memo.js가 내용을 채워 넣습니다. -->
+      <ul id="memo-list"></ul>
+    </section>
+
+  </main>
+
+  <hr />
+
+  <!-- aside: 본문과 직접 관련은 없지만 도움이 되는 부가 정보(사이드바)입니다. (과제 8 요구사항) -->
+  <aside>
+    <h2>부가 정보</h2>
+
+    <section>
+      <h3>학습 링크</h3>
+      <ul>
+        <!-- target="_blank": 링크를 새 탭에서 엽니다. -->
+        <!-- rel="noopener": 새 탭이 원래 페이지를 건드리지 못하게 막는 보안 설정입니다. -->
+        <li><a href="https://github.com/so0126/tripflow-ai" target="_blank" rel="noopener">최근에 했던 프로젝트</a></li>
+        <li><a href="https://so0126.github.io/til/" target="_blank" rel="noopener">Today I Learn</a></li>
+      </ul>
+    </section>
+
+    <!-- section: JavaScript 실습을 실행해 보는 영역입니다. -->
+    <!-- 과제 12가 "aside 안의 새로운 section"을 예로 들고 있어 여기에 넣었습니다. -->
+    <section>
+      <h3>JavaScript 실습</h3>
+      <p>버튼을 누르면 알림창으로 실습이 시작됩니다.</p>
+
+      <ul>
+        <li>
+          <!-- button: 누를 수 있는 버튼입니다. -->
+          <!-- type="button": 폼을 제출하지 않는, 그냥 클릭용 버튼이라는 뜻입니다. -->
+          <!--   (type을 안 적으면 form 안에서 제출 버튼처럼 동작해 페이지가 새로고침될 수 있습니다.) -->
+          <!-- onclick: 버튼을 눌렀을 때 실행할 함수 이름을 적습니다. -->
+          <!--   startUpDown은 아래 script로 불러온 upDown.js 안에 만들어 둔 함수입니다. -->
+          <button type="button" onclick="startUpDown()">Up-Down 게임</button>
+          컴퓨터가 정한 1~50 숫자 맞히기 (과제 12)
+        </li>
+
+        <li>
+          <button type="button" onclick="calculateGrade()">성적 계산기</button>
+          3과목 점수로 총점·평균·등급 계산 (과제 13)
+        </li>
+
+        <li>
+          <button type="button" onclick="showMyBag()">내 가방 보기</button>
+          가방 속 물건 목록 출력 (과제 14)
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <hr />
+
+  <!-- footer: 페이지 맨 아래의 꼬리말 영역입니다. 작성자나 저작권을 적습니다. -->
+  <footer>
+    <p>SKALA Front-End 실습 과제</p>
+  </footer>
+
+  <!-- script: JavaScript 파일을 불러옵니다. -->
+  <!-- body가 끝나기 직전에 두면 위의 form과 ul이 이미 만들어진 뒤에 실행되므로 -->
+  <!-- 스크립트가 요소를 찾지 못하는 문제가 생기지 않습니다. -->
+  <!-- ../는 "한 폴더 위로 나간다"는 뜻이라 html 폴더에서 나와 script 폴더로 들어갑니다. -->
+  <script src="../script/memo.js"></script>
+
+  <!-- 아래 세 파일은 각각 함수 하나씩만 만들어 둘 뿐, 불러오는 것만으로는 아무 일도 일어나지 않습니다. -->
+  <!-- 위 aside의 버튼을 눌러야 그 안의 함수가 실행됩니다. -->
+  <script src="../script/upDown.js"></script>
+  <script src="../script/grade.js"></script>
+  <script src="../script/bag.js"></script>
+
+</body>
+</html>
