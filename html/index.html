@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Welcome SKALA</title>
+
+  <!-- link: 외부 CSS 파일을 이 문서에 연결합니다. (과제 9 요구사항) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <!-- div class="container": 모든 콘텐츠를 감싸는 상자입니다. (과제 10 요구사항) -->
+  <!-- CSS에서 max-width와 margin: 0 auto로 화면 가운데에 오도록 했습니다. -->
+  <div class="container">
+
+    <header class="home-header">
+      <img
+        class="header-character"
+        src="../assets/images/character.png"
+        alt=""
+      />
+      <h1>환영 인사</h1>
+
+      <p>스칼라에 오신 것을 환영합니다.</p>
+    </header>
+
+    <hr />
+
+    <nav id="site-nav">
+      <h2>전체 메뉴</h2>
+
+      <ul>
+        <li><span aria-current="page">메인</span></li>
+        <li><a href="myProfile.html">나의 프로필</a></li>
+        <li><a href="myClass.html">나의 강의 일정</a></li>
+        <li><a href="myHoliday.html">나의 휴일</a></li>
+        <li><a href="myTrip.html">나의 여행지</a></li>
+        <li><a href="signUp.html">회원가입</a></li>
+      </ul>
+    </nav>
+
+    <hr />
+
+    <div class="content-layout">
+      <main>
+
+      <section class="latest-trip">
+        <h2>최신 여행글</h2>
+
+        <a class="latest-trip-card" href="myTrip.html">
+          <img src="../media/KakaoTalk_20260717_093824488.jpg" alt="삿포로 투어 중 눈이 쌓인 풍경" />
+
+          <span>
+            <strong>삿포로 투어 - 눈 오는 길도 너무 좋아요</strong>
+            <small>삿포로 투어예요. 눈이 많이 와서 길은 조금 힘들었지만, 사진으로 남기니까 너무 좋았어요.</small>
+          </span>
+        </a>
+      </section>
+
+      <!-- section: 메모장 하나로 묶이는 내용 덩어리입니다. -->
+      <section>
+        <h2>메모장</h2>
+        <p>이 브라우저에만 저장되는 나만의 메모입니다. 새로고침해도 남아 있습니다.</p>
+
+        <form id="memo-form">
+          <label for="memo-text">메모 내용</label>
+
+          <br />
+
+          <textarea id="memo-text" rows="3" cols="40" placeholder="메모할 내용을 적어 주세요" required maxlength="200"></textarea>
+
+          <br />
+
+          <button type="submit">추가</button>
+        </form>
+
+        <ul id="memo-list"></ul>
+      </section>
+
+      </main>
+
+      <aside>
+        <h2>부가 정보</h2>
+
+        <section>
+          <h3>학습 링크</h3>
+          <ul>
+            <!-- rel="noopener": 새 탭이 원래 페이지를 건드리지 못하게 막는 보안 설정입니다. -->
+            <li><a href="https://github.com/so0126/tripflow-ai" target="_blank" rel="noopener">최근에 했던 프로젝트</a></li>
+            <li><a href="https://so0126.github.io/til/" target="_blank" rel="noopener">Today I Learn</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>JavaScript 실습</h3>
+          <p>버튼을 누르면 알림창으로 실습이 시작됩니다.</p>
+
+          <ul>
+            <li>
+              <button type="button" onclick="startUpDown()">Up-Down 게임</button>
+              컴퓨터가 정한 1~50 숫자 맞히기 (과제 12)
+            </li>
+
+            <li>
+              <button type="button" onclick="calculateGrade()">성적 계산기</button>
+              3과목 점수로 총점·평균·등급 계산 (과제 13)
+            </li>
+
+            <li>
+              <button type="button" onclick="showMyBag()">내 가방 보기</button>
+              가방 속 물건 목록 출력 (과제 14)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>실시간 날씨</h3>
+          <p>도시를 선택하면 좌표와 현재 날씨가 표시됩니다.</p>
+
+          <label for="city-select">도시</label>
+          <select id="city-select">
+            <option value="">도시를 선택하세요</option>
+            <option data-lat="37.5665" data-lon="126.9780">서울</option>
+            <option data-lat="37.4563" data-lon="126.7052">인천</option>
+            <option data-lat="36.3504" data-lon="127.3845">대전</option>
+            <option data-lat="35.8714" data-lon="128.6014">대구</option>
+            <option data-lat="35.1595" data-lon="126.8526">광주</option>
+            <option data-lat="35.1796" data-lon="129.0756">부산</option>
+            <option data-lat="37.7519" data-lon="128.8761">강릉</option>
+            <option data-lat="33.4996" data-lon="126.5312">제주</option>
+          </select>
+
+          <div id="weather-box"></div>
+        </section>
+      </aside>
+    </div>
+
+    <hr />
+
+    <footer>
+      <p>SKALA Front-End 실습 과제</p>
+    </footer>
+
+    <script src="../script/nav.js"></script>
+
+    <script src="../script/memo.js"></script>
+
+    <script src="../script/upDown.js"></script>
+    <script src="../script/grade.js"></script>
+    <script src="../script/bag.js"></script>
+
+    <script type="module" src="../script/realtimeInfo.js"></script>
+
+  </div>
+
+</body>
+</html>

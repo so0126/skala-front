@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입 결과</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <!-- id로 표시한 곳은 signUpResult.js가 주소창의 값을 읽어 채웁니다. -->
+      <!-- 아래 글자는 JavaScript가 실행되기 전 잠깐 보이는 기본값입니다. -->
+      <h1 id="welcome-title">환영합니다!</h1>
+      <p id="welcome-lead">아래 이메일과 아이디로 가입되셨습니다.</p>
+    </header>
+
+    <hr />
+
+    <div id="site-nav"></div>
+
+    <hr />
+
+    <main>
+
+      <section id="signup-info">
+        <h2>가입 정보</h2>
+
+        <dl>
+          <dt>아이디</dt>
+          <dd id="result-id">-</dd>
+
+          <dt>이메일</dt>
+          <dd id="result-email">-</dd>
+        </dl>
+      </section>
+
+      <!-- hidden: 화면에서 숨깁니다. -->
+      <!-- 회원가입 폼을 거치지 않고 이 페이지를 바로 열었을 때만 JavaScript가 이 안내를 꺼냅니다. -->
+      <section id="direct-notice" hidden>
+        <h2>가입 정보가 없습니다</h2>
+        <p>
+          회원가입 폼을 거쳐 들어오면 이 자리에 가입 정보가 표시됩니다.
+          <a href="signUp.html">회원가입 페이지</a>에서 다시 시도해 주세요.
+        </p>
+      </section>
+
+      <section>
+        <h2>이동하기</h2>
+
+        <ul>
+          <li><a href="index.html">메인 페이지로 이동</a></li>
+          <li><a href="signUp.html">회원가입 다시 하기</a></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <hr />
+
+    <footer>
+      <p>SKALA Front-End 실습 과제</p>
+    </footer>
+
+  </div>
+
+  <script src="../script/nav.js"></script>
+
+  <script src="../script/signUpResult.js"></script>
+
+</body>
+</html>
