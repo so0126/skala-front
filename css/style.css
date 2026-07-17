@@ -380,6 +380,50 @@ td {
   padding-left: 0;
 }
 
+.latest-trip {
+  margin-bottom: 28px;
+}
+
+.latest-trip-card {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.latest-trip-card:hover {
+  box-shadow: 0 16px 34px rgba(42, 92, 118, 0.16);
+  text-decoration: none;
+  transform: translateY(-4px);
+}
+
+.latest-trip-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.latest-trip-card span {
+  display: grid;
+  gap: 6px;
+}
+
+.latest-trip-card strong {
+  color: var(--deep-navy);
+  font-size: 1.05rem;
+}
+
+.latest-trip-card small {
+  line-height: 1.6;
+}
+
 figure {
   margin: 0 0 12px;
 }
@@ -620,6 +664,10 @@ aside ul {
   }
 
   .trip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-trip-card {
     grid-template-columns: 1fr;
   }
 
