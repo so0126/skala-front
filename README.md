@@ -17,6 +17,9 @@ HTML, CSS, JavaScript 수업에서 진행한 실습 과제를 정리하는 저�
 - Vanilla JavaScript
 - Git / GitHub
 
+## 시연 영상
+![시연 영상](./assets/images/skala-front.gif)
+
 ## Project Structure
 
 ```text
@@ -33,7 +36,14 @@ SKALA-FRONT/
 ├─ css/
 │  └─ style.css
 ├─ script/
-│  └─ JavaScript 실습 파일
+│  ├─ nav.js            # 전체 메뉴 (모든 페이지 공통)
+│  ├─ memo.js           # 메모장 (index)
+│  ├─ upDown.js         # 과제 12. Up-Down 게임
+│  ├─ grade.js          # 과제 13. 성적 계산기
+│  ├─ bag.js            # 과제 14. 내 가방 보기
+│  ├─ weatherAPI.js     # 과제 17. 날씨 데이터 모듈 (export)
+│  ├─ realtimeInfo.js   # 과제 17. 화면 처리 모듈 (import)
+│  └─ signUpResult.js   # 회원가입 결과 표시
 └─ media/
    └─ 이미지, 오디오, 비디오 파일
 
@@ -42,56 +52,15 @@ SKALA-FRONT/
 
 > 실제 파일 구조는 과제 진행 과정에서 변경될 수 있습니다.
 
-## Pages
+## 공통 메뉴 구현 방식
 
-| Page | Description |
-|---|---|
-| `index.html` | 전체 페이지를 연결하는 메인 포털 |
-| `myProfile.html` | 나의 소개 |
-| `myClass.html` | 강의 일정 |
-| `myHoliday.html` | 휴일과 하고 싶은 일 |
-| `myTrip.html` | 이미지, 오디오, 비디오를 활용한 여행지 소개 |
-| `signUp.html` | 회원가입 폼 |
-| `signUpResult.html` | 회원가입 결과 페이지 |
+과제 8의 `<nav>`(전체 메뉴)는 모든 페이지에 똑같이 떠야 하므로, HTML을 7개 파일에 복사하는 대신
+`script/nav.js`가 공통으로 삽입하도록 구현했습니다.
 
-## Assignment Progress
-
-### HTML
-
-- [ ] 프로젝트 폴더 및 `index.html` 생성
-- [ ] 나의 소개 페이지
-- [ ] 강의 일정 페이지
-- [ ] 페이지 바로가기
-- [ ] 회원가입 폼
-- [ ] 회원가입 결과 페이지
-- [ ] 여행지 소개 페이지
-- [ ] 시맨틱 태그를 활용한 메인 포털 구성
-
-### CSS
-
-- [ ] 공통 폰트와 색상 적용
-- [ ] 박스 모델과 카드 UI 적용
-- [ ] 강의 일정 테이블 스타일링
-- [ ] 회원가입 폼 스타일링
-- [ ] 공통 레이아웃 및 반응형 디자인
-
-### JavaScript
-
-- [ ] Up-Down 게임
-- [ ] 성적 계산 기능
-- [ ] 가방 객체 실습
-- [ ] DOM 이벤트 처리
-- [ ] 실시간 정보 또는 날씨 API 연동
-
-## Branch
-
-현재 과제 작업은 다음 브랜치에서 진행합니다.
-
-```text
-feature/frontend-assignment
-```
-
-작업 완료 후 `main` 브랜치에 병합합니다.
+- 각 페이지에는 자리 표시자 `<nav id="site-nav">`만 두고, `nav.js`가 이 자리를 생성한 `<nav>`로 교체합니다.
+- 메뉴 항목은 `nav.js`의 `MENU` 배열 한 곳에서만 관리합니다. 페이지를 추가할 때 이 배열만 수정하면 됩니다.
+- 현재 보고 있는 페이지는 링크 대신 `<span aria-current="page">`로 표시됩니다.
+- `index.html`의 자리 표시자에는 메뉴 내용을 미리 채워두어, JavaScript가 동작하지 않는 환경에서도 메뉴가 보입니다.
 
 ## Run
 
@@ -115,8 +84,3 @@ fix: 오류 수정
 refactor: 코드 구조 개선
 docs: README 등 문서 수정
 ```
-
-## Current Status
-
-현재는 수업 과제를 순차적으로 구현하는 단계입니다.  
-전체 과제 완료 후 디자인, 실행 방법, 주요 기능과 결과 화면을 추가하여 README를 보완할 예정입니다.
