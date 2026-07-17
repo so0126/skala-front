@@ -22,10 +22,8 @@ HTML, CSS, JavaScript 수업에서 진행한 실습 과제를 정리하는 저�
 ```text
 SKALA-FRONT/
 ├─ README.md
-├─ index.html
-├─docs/
-│  └─ claude, codex 협업용 파일
 ├─ html/
+│  ├─ index.html
 │  ├─ myProfile.html
 │  ├─ myClass.html
 │  ├─ myHoliday.html
@@ -116,15 +114,6 @@ style: CSS 및 화면 디자인 수정
 fix: 오류 수정
 refactor: 코드 구조 개선
 docs: README 등 문서 수정
-```
-
-예시:
-
-```text
-feat: add profile and class pages
-style: apply common page layout
-feat: implement up-down game
-docs: update assignment checklist
 ```
 
 ## Current Status
