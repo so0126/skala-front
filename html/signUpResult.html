@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입 결과</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>회원가입 완료</h1>
+    <p>가입해 주셔서 감사합니다. 아래 내용을 확인해 주세요.</p>
+  </header>
+
+  <hr />
+
+  <main>
+
+    <section>
+      <h2>제출된 정보 확인 방법</h2>
+
+      <!-- p: 설명 문단입니다. -->
+      <p>
+        회원가입 폼은 <strong>method="get"</strong> 방식으로 값을 보냈기 때문에,
+        입력한 값이 브라우저 주소창 뒤에 <code>?userId=값&amp;userName=값</code> 형태로 붙어 있습니다.
+        주소창을 확인해 보세요.
+      </p>
+
+      <!-- strong: 중요한 내용을 강조합니다. 굵게 보이는 것은 브라우저 기본 스타일입니다. -->
+      <!-- code: 코드나 명령어처럼 그대로 읽어야 하는 글자를 나타냅니다. -->
+      <p>
+        주소창에 값을 실제로 화면에 뿌려주는 기능은 <strong>JavaScript</strong>가 필요하므로,
+        이번 HTML 단계에서는 다루지 않습니다.
+      </p>
+    </section>
+
+    <section>
+      <h2>다음 단계 안내</h2>
+
+      <ol>
+        <li>입력하신 이메일로 인증 메일이 발송됩니다.</li>
+        <li>메일의 인증 링크를 눌러 주세요.</li>
+        <li>인증이 끝나면 로그인할 수 있습니다.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>이동하기</h2>
+
+      <ul>
+        <li><a href="index.html">메인 페이지로 이동</a></li>
+        <!-- 값을 잘못 입력했을 때 다시 폼으로 돌아갈 수 있는 링크입니다. -->
+        <li><a href="signUp.html">회원가입 다시 하기</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <hr />
+
+  <footer>
+    <p>SKALA Front-End 실습 과제</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>회원가입</h1>
+    <p>아래 정보를 입력하고 회원가입 버튼을 눌러 주세요.</p>
+  </header>
+
+  <hr />
+
+  <main>
+
+    <!-- form: 사용자가 입력한 값을 모아서 서버(또는 다른 페이지)로 보내는 영역입니다. (과제 5 요구사항) -->
+    <!-- action: 입력값을 보낼 대상 페이지입니다. -->
+    <!-- method="get": 입력값을 주소창 뒤에 ?이름=값 형태로 붙여서 보냅니다. -->
+    <form action="signUpResult.html" method="get">
+
+      <!-- fieldset: 관련 있는 입력 항목들을 하나로 묶어 테두리를 만듭니다. (과제 5 요구사항) -->
+      <fieldset>
+        <!-- legend: fieldset 묶음의 제목입니다. 테두리 위에 표시됩니다. (과제 5 요구사항) -->
+        <legend>기본 정보</legend>
+
+        <!-- p: 입력 항목 하나씩 줄바꿈하기 위해 사용했습니다. (과제 5는 CSS 없이 진행) -->
+        <p>
+          <!-- label: 입력창의 이름표입니다. for 값과 input의 id 값을 같게 하면 -->
+          <!-- 이름표를 클릭했을 때 해당 입력창으로 커서가 이동합니다. (과제 5 요구사항) -->
+          <label for="userId">아이디</label><br />
+
+          <!-- input: 한 줄짜리 입력창입니다. -->
+          <!-- type="text": 일반 글자 입력 / name: 값을 보낼 때 쓰는 이름표 -->
+          <!-- placeholder: 입력 전에 흐리게 보이는 안내 문구 -->
+          <!-- required: 비워두면 제출이 안 되게 막는 필수 입력 표시 -->
+          <input type="text" id="userId" name="userId" placeholder="영문 5자 이상" required />
+        </p>
+
+        <p>
+          <label for="userPw">비밀번호</label><br />
+          <!-- type="password": 입력한 글자가 점으로 가려집니다. -->
+          <!-- minlength: 최소 글자 수를 지정합니다. -->
+          <input type="password" id="userPw" name="userPw" placeholder="8자 이상 입력" minlength="8" required />
+        </p>
+
+        <p>
+          <label for="userName">이름</label><br />
+          <input type="text" id="userName" name="userName" placeholder="홍길동" required />
+        </p>
+
+        <p>
+          <label for="userEmail">이메일</label><br />
+          <!-- type="email": @가 없으면 브라우저가 알아서 오류를 알려줍니다. -->
+          <input type="email" id="userEmail" name="userEmail" placeholder="example@skala.com" required />
+        </p>
+
+        <p>
+          <label for="userBirth">생년월일</label><br />
+          <!-- type="date": 브라우저가 달력 형태로 보여줍니다. -->
+          <input type="date" id="userBirth" name="userBirth" />
+        </p>
+      </fieldset>
+
+      <br />
+
+      <!-- fieldset: 두 번째 묶음. 성격이 다른 항목이라 따로 묶었습니다. -->
+      <fieldset>
+        <legend>추가 정보</legend>
+
+        <p>
+          <label for="city">사는 도시</label><br />
+
+          <!-- select: 여러 개 중 하나를 고르는 드롭다운 목록입니다. (과제 5 요구사항) -->
+          <select id="city" name="city">
+            <!-- option: 드롭다운 안의 선택지 하나입니다. (과제 5 요구사항) -->
+            <!-- value="": 아무것도 안 고르면 빈 값이라 required가 걸립니다. -->
+            <option value="">-- 선택하세요 --</option>
+            <option value="seoul">서울</option>
+            <option value="busan">부산</option>
+            <option value="daegu">대구</option>
+            <option value="jeju">제주</option>
+          </select>
+        </p>
+
+        <p>
+          <!-- fieldset 안에서 라디오 그룹의 제목 역할입니다. -->
+          관심 분야<br />
+
+          <!-- type="radio": 여러 개 중 하나만 고르는 동그란 버튼입니다. -->
+          <!-- name이 같으면 하나의 그룹이 되어 한 개만 선택됩니다. -->
+          <input type="radio" id="fieldFront" name="field" value="frontend" checked />
+          <label for="fieldFront">학생</label>
+
+          <input type="radio" id="fieldBack" name="field" value="backend" />
+          <label for="fieldBack">교수</label>
+
+          <input type="radio" id="fieldData" name="field" value="data" />
+          <label for="fieldData">교원</label>
+        </p>
+
+        <p>
+          받고 싶은 소식<br />
+
+          <!-- type="checkbox": 여러 개를 동시에 고를 수 있는 네모난 버튼입니다. -->
+          <input type="checkbox" id="newsClass" name="news" value="class" />
+          <label for="newsClass">강의 소식</label>
+
+          <input type="checkbox" id="newsEvent" name="news" value="event" />
+          <label for="newsEvent">이벤트 소식</label>
+        </p>
+
+        <p>
+          <label for="intro">자기소개</label><br />
+
+          <!-- textarea: 여러 줄을 입력하는 큰 입력창입니다. (과제 5 요구사항) -->
+          <!-- rows/cols: 보이는 줄 수와 글자 수를 정합니다. (CSS 없이 크기 조절) -->
+          <!-- input과 달리 여는 태그와 닫는 태그 사이에 기본값을 넣습니다. -->
+          <textarea id="intro" name="intro" rows="5" cols="40" placeholder="자유롭게 작성해 주세요."></textarea>
+        </p>
+      </fieldset>
+
+      <br />
+
+      <p>
+        <!-- button type="submit": 폼에 입력한 값을 action 주소로 보내는 버튼입니다. (과제 5 요구사항) -->
+        <button type="submit">회원가입</button>
+
+        <!-- button type="reset": 입력한 값을 모두 처음 상태로 되돌리는 버튼입니다. (과제 5 요구사항) -->
+        <button type="reset">초기화</button>
+      </p>
+
+    </form>
+
+  </main>
+
+  <hr />
+
+  <footer>
+    <p><a href="index.html">메인으로 돌아가기</a></p>
+  </footer>
+
+</body>
+</html>
