@@ -79,7 +79,7 @@ cd SKALA-FRONT
 
 ```text
 feat: 새로운 페이지 또는 기능 추가
-style: CSS 및 화면 디자인 수정
+design: CSS 및 화면 디자인 수정
 fix: 오류 수정
 refactor: 코드 구조 개선
 docs: README 등 문서 수정
