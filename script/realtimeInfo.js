@@ -13,6 +13,17 @@ function render(city, lat, lon, status) {
   `;
 }
 
+function renderLoading(city, lat, lon) {
+  weatherBox.innerHTML = `
+    <p><strong>${city}</strong></p>
+    <p>위도 ${lat} / 경도 ${lon}</p>
+    <div class="loading-state" role="status" aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>날씨를 불러오는 중입니다</span>
+    </div>
+  `;
+}
+
 citySelect.addEventListener("change", async () => {
   const option = citySelect.selectedOptions[0];
   const lat = option.dataset.lat;
@@ -26,7 +37,7 @@ citySelect.addEventListener("change", async () => {
   const city = option.textContent;
   const requestId = ++latestRequest;
 
-  render(city, lat, lon, "로딩 중… ⏳");
+  renderLoading(city, lat, lon);
 
   try {
     const weather = await fetchWeather(lat, lon);
