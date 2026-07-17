@@ -5,207 +5,201 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>나의 강의 일정</title>
+
+  <!-- link: 외부 CSS 파일을 이 문서에 연결합니다. (과제 9 요구사항) -->
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
 
-  <header>
-    <h1>나의 강의 일정</h1>
-    <p>오전 9시부터 오후 6시까지의 시간표입니다. 같은 과목은 같은 색으로, 빈 시간은 공강으로 합쳐서 표시했습니다.</p>
-  </header>
+  <!-- div class="container": 모든 콘텐츠를 감싸는 상자입니다. (과제 10 요구사항) -->
+  <!-- CSS에서 max-width와 margin: 0 auto로 화면 가운데에 오도록 했습니다. -->
+  <div class="container">
 
-  <hr />
-
-  <main>
-
-    <!-- ================================================================ -->
-    <!-- 색상과 정렬에 대하여                                              -->
-    <!-- 과제 3은 "CSS를 사용하지 않는다"가 규칙이라,                       -->
-    <!--   색   → CSS의 background-color 대신 HTML 속성 bgcolor            -->
-    <!--   정렬 → CSS의 text-align 대신 HTML 속성 align                    -->
-    <!-- 을 사용했습니다.                                                  -->
-    <!-- 두 속성 모두 HTML5에서 폐기(obsolete)된 옛날 방식이라,             -->
-    <!-- 실무에서는 CSS를 씁니다.                                          -->
-    <!-- 나중에 CSS 과제(과제 10)를 할 때 bgcolor와 align을 지우고          -->
-    <!-- class + background-color + text-align으로 바꾸면 됩니다.          -->
-    <!-- ================================================================ -->
-
-    <!-- table: 행(가로)과 열(세로)로 이루어진 표입니다. (과제 3 요구사항) -->
-    <!-- border="1": CSS 없이 표의 선을 보이게 하는 HTML 속성입니다. -->
-    <table border="1">
-
-      <!-- caption: 표의 제목입니다. table 바로 다음에 딱 한 번만 쓸 수 있습니다. -->
-      <caption>2026학년도 1학기 시간표 (09:00 ~ 18:00)</caption>
-
-      <!-- thead: 표의 머리글 행을 모아두는 영역입니다. (과제 3 요구사항: 시간, 요일) -->
-      <thead>
-        <!-- tr: 표의 가로 한 줄(행)입니다. -->
-        <tr>
-          <!-- th: 머리글 칸입니다. 일반 칸(td)과 달리 "이 줄/칸이 무엇인지" 알려주는 제목 칸입니다. -->
-          <th align="center">시간</th>
-          <th align="center">월</th>
-          <th align="center">화</th>
-          <th align="center">수</th>
-          <th align="center">목</th>
-          <th align="center">금</th>
-        </tr>
-      </thead>
-
-      <!-- tbody: 표의 실제 내용이 들어가는 본문 영역입니다. (과제 3 요구사항) -->
-      <tbody>
-
-        <!-- ── 09:00 ~ 10:00 ─────────────────────────────────────────── -->
-        <!-- rowspan="3": 세로로 칸 3개를 합칩니다. 수요일 한류와문화교류는 9~12시 3시간 수업입니다. -->
-        <tr>
-          <th align="center">09:00 ~ 10:00</th>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-          <td align="center" bgcolor="#C3E6C3">영어</td>
-          <td align="center" bgcolor="#A8E6CF" rowspan="3">한류와<br />문화교류</td>
-          <td align="center" bgcolor="#FFF9C4" rowspan="3">공강</td>
-          <td align="center" bgcolor="#FFF9C4" rowspan="3">공강</td>
-        </tr>
-
-        <!-- ── 10:00 ~ 11:00 ─────────────────────────────────────────── -->
-        <!-- 수/목/금 칸은 위 행에서 rowspan="3"으로 이미 내려와 있어 여기서는 적지 않습니다. -->
-        <tr>
-          <th align="center">10:00 ~ 11:00</th>
-          <!-- rowspan="2": 월요일 기초공학수학은 10~12시 2시간 수업이라 세로 2칸을 합칩니다. -->
-          <td align="center" bgcolor="#CDE3F5" rowspan="2">기초공학수학</td>
-          <td align="center" bgcolor="#D9C7ED">채플</td>
-        </tr>
-
-        <!-- ── 11:00 ~ 12:00 ─────────────────────────────────────────── -->
-        <!-- 월요일 칸은 위에서 rowspan="2"로 내려온 상태라 적지 않습니다. -->
-        <tr>
-          <th align="center">11:00 ~ 12:00</th>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-        </tr>
-
-        <!-- ── 12:00 ~ 13:00 (점심시간) ──────────────────────────────── -->
-        <!-- colspan="5": 가로로 칸 5개를 합칩니다. 점심시간은 모든 요일이 같으므로 한 칸으로 표현합니다. (과제 3 요구사항) -->
-        <tr>
-          <th align="center">12:00 ~ 13:00</th>
-          <td align="center" bgcolor="#EDEDED" colspan="5">점심시간</td>
-        </tr>
-
-        <!-- ── 13:00 ~ 14:00 ─────────────────────────────────────────── -->
-        <!-- 점심시간 행이 가로로 다 막고 있어서, 오전의 rowspan은 여기까지 이어질 수 없습니다. -->
-        <!-- 그래서 오후 일정은 이 행에서 새로 시작합니다. -->
-        <tr>
-          <th align="center">13:00 ~ 14:00</th>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-          <!-- rowspan="2": 화요일은 13~15시가 비어 있어 공강 2칸을 하나로 합칩니다. -->
-          <td align="center" bgcolor="#FFF9C4" rowspan="2">공강</td>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-          <td align="center" bgcolor="#FFF9C4" rowspan="2">공강</td>
-          <!-- rowspan="5": 금요일은 오후 내내(13~18시) 수업이 없어 5칸을 통째로 합칩니다. -->
-          <td align="center" bgcolor="#FFF9C4" rowspan="5">공강</td>
-        </tr>
-
-        <!-- ── 14:00 ~ 15:00 ─────────────────────────────────────────── -->
-        <!-- 화학1및실험은 월요일과 수요일에 모두 있으므로 같은 분홍색(#F9C0C8)을 씁니다. -->
-        <tr>
-          <th align="center">14:00 ~ 15:00</th>
-          <td align="center" bgcolor="#F9C0C8" rowspan="2">화학1및실험</td>
-          <td align="center" bgcolor="#F9C0C8" rowspan="2">화학1및실험</td>
-        </tr>
-
-        <!-- ── 15:00 ~ 16:00 ─────────────────────────────────────────── -->
-        <!-- 물리1및실험도 화요일과 목요일에 모두 있으므로 같은 살구색(#FFD3B0)을 씁니다. -->
-        <tr>
-          <th align="center">15:00 ~ 16:00</th>
-          <td align="center" bgcolor="#FFD3B0" rowspan="2">물리1및실험</td>
-          <td align="center" bgcolor="#FFD3B0" rowspan="2">물리1및실험</td>
-        </tr>
-
-        <!-- ── 16:00 ~ 17:00 ─────────────────────────────────────────── -->
-        <tr>
-          <th align="center">16:00 ~ 17:00</th>
-          <td align="center" bgcolor="#FFF9C4" rowspan="2">공강</td>
-          <td align="center" bgcolor="#FFF9C4" rowspan="2">공강</td>
-        </tr>
-
-        <!-- ── 17:00 ~ 18:00 ─────────────────────────────────────────── -->
-        <tr>
-          <th align="center">17:00 ~ 18:00</th>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-          <td align="center" bgcolor="#FFF9C4">공강</td>
-        </tr>
-
-      </tbody>
-    </table>
+    <header>
+      <h1>나의 강의 일정</h1>
+      <p>오전 9시부터 오후 6시까지의 시간표입니다. 같은 과목은 같은 색으로, 빈 시간은 공강으로 합쳐서 표시했습니다.</p>
+    </header>
 
     <hr />
 
-    <!-- section: 시간표를 보조하는 색상 안내 영역입니다. -->
-    <section>
-      <h2>색상표</h2>
-      <p>시간표에서 각 색이 어떤 과목을 뜻하는지 정리했습니다.</p>
+    <main>
 
-      <table border="1">
-        <caption>과목별 색상 안내</caption>
+
+
+      <table>
+
+        <caption>2026학년도 1학기 시간표 (09:00 ~ 18:00)</caption>
+
 
         <thead>
           <tr>
-            <th align="center">색상</th>
-            <th align="center">과목</th>
-            <th align="center">요일 / 시간</th>
+            <th>시간</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
           </tr>
         </thead>
 
         <tbody>
+
+          <!-- ── 09:00 ~ 10:00 ─────────────────────────────────────────── -->
+          <!-- rowspan="3": 세로로 칸 3개를 합칩니다. 수요일 한류와문화교류는 9~12시 3시간 수업입니다. -->
           <tr>
-            <!-- 색만 보여주는 칸이라 글자가 없습니다. -->
-            <td align="center" bgcolor="#CDE3F5">&nbsp;</td>
-            <td align="center">기초공학수학</td>
-            <td align="center">월 10:00 ~ 12:00</td>
+            <th>09:00 ~ 10:00</th>
+            <td class="empty">공강</td>
+            <td class="subject-eng">영어</td>
+            <td class="subject-culture" rowspan="3">한류와<br />문화교류</td>
+            <td class="empty" rowspan="3">공강</td>
+            <td class="empty" rowspan="3">공강</td>
           </tr>
+
+          <!-- ── 10:00 ~ 11:00 ─────────────────────────────────────────── -->
+          <!-- 수/목/금 칸은 위 행에서 rowspan="3"으로 이미 내려와 있어 여기서는 적지 않습니다. -->
           <tr>
-            <td align="center" bgcolor="#F9C0C8">&nbsp;</td>
-            <td align="center">화학1및실험</td>
-            <td align="center">월 14:00 ~ 16:00 / 수 14:00 ~ 16:00</td>
+            <th>10:00 ~ 11:00</th>
+            <!-- rowspan="2": 월요일 기초공학수학은 10~12시 2시간 수업이라 세로 2칸을 합칩니다. -->
+            <td class="subject-math" rowspan="2">기초공학수학</td>
+            <td class="subject-chapel">채플</td>
           </tr>
+
+          <!-- ── 11:00 ~ 12:00 ─────────────────────────────────────────── -->
+          <!-- 월요일 칸은 위에서 rowspan="2"로 내려온 상태라 적지 않습니다. -->
           <tr>
-            <td align="center" bgcolor="#C3E6C3">&nbsp;</td>
-            <td align="center">영어</td>
-            <td align="center">화 09:00 ~ 10:00</td>
+            <th>11:00 ~ 12:00</th>
+            <td class="empty">공강</td>
           </tr>
+
+          <!-- ── 12:00 ~ 13:00 (점심시간) ──────────────────────────────── -->
+          <!-- colspan="5": 가로로 칸 5개를 합칩니다. 점심시간은 모든 요일이 같으므로 한 칸으로 표현합니다. (과제 3 요구사항) -->
           <tr>
-            <td align="center" bgcolor="#D9C7ED">&nbsp;</td>
-            <td align="center">채플</td>
-            <td align="center">화 10:00 ~ 11:00</td>
+            <th>12:00 ~ 13:00</th>
+            <td class="lunch" colspan="5">점심시간</td>
           </tr>
+
+          <!-- ── 13:00 ~ 14:00 ─────────────────────────────────────────── -->
+          <!-- 점심시간 행이 가로로 다 막고 있어서, 오전의 rowspan은 여기까지 이어질 수 없습니다. -->
+          <!-- 그래서 오후 일정은 이 행에서 새로 시작합니다. -->
           <tr>
-            <td align="center" bgcolor="#FFD3B0">&nbsp;</td>
-            <td align="center">물리1및실험</td>
-            <td align="center">화 15:00 ~ 17:00 / 목 15:00 ~ 17:00</td>
+            <th>13:00 ~ 14:00</th>
+            <td class="empty">공강</td>
+            <!-- rowspan="2": 화요일은 13~15시가 비어 있어 공강 2칸을 하나로 합칩니다. -->
+            <td class="empty" rowspan="2">공강</td>
+            <td class="empty">공강</td>
+            <td class="empty" rowspan="2">공강</td>
+            <!-- rowspan="5": 금요일은 오후 내내(13~18시) 수업이 없어 5칸을 통째로 합칩니다. -->
+            <td class="empty" rowspan="5">공강</td>
           </tr>
+
+          <!-- ── 14:00 ~ 15:00 ─────────────────────────────────────────── -->
+          <!-- 화학1및실험은 월요일과 수요일에 모두 있으므로 같은 class(subject-chem)를 씁니다. -->
           <tr>
-            <td align="center" bgcolor="#A8E6CF">&nbsp;</td>
-            <td align="center">한류와문화교류</td>
-            <td align="center">수 09:00 ~ 12:00</td>
+            <th>14:00 ~ 15:00</th>
+            <td class="subject-chem" rowspan="2">화학1및실험</td>
+            <td class="subject-chem" rowspan="2">화학1및실험</td>
           </tr>
+
+          <!-- ── 15:00 ~ 16:00 ─────────────────────────────────────────── -->
+          <!-- 물리1및실험도 화요일과 목요일에 모두 있으므로 같은 class(subject-phys)를 씁니다. -->
           <tr>
-            <td align="center" bgcolor="#FFF9C4">&nbsp;</td>
-            <td align="center">공강</td>
-            <td align="center">수업이 없는 시간</td>
+            <th>15:00 ~ 16:00</th>
+            <td class="subject-phys" rowspan="2">물리1및실험</td>
+            <td class="subject-phys" rowspan="2">물리1및실험</td>
           </tr>
+
+          <!-- ── 16:00 ~ 17:00 ─────────────────────────────────────────── -->
           <tr>
-            <td align="center" bgcolor="#EDEDED">&nbsp;</td>
-            <td align="center">점심시간</td>
-            <td align="center">매일 12:00 ~ 13:00</td>
+            <th>16:00 ~ 17:00</th>
+            <td class="empty" rowspan="2">공강</td>
+            <td class="empty" rowspan="2">공강</td>
           </tr>
+
+          <!-- ── 17:00 ~ 18:00 ─────────────────────────────────────────── -->
+          <tr>
+            <th>17:00 ~ 18:00</th>
+            <td class="empty">공강</td>
+            <td class="empty">공강</td>
+          </tr>
+
         </tbody>
       </table>
-    </section>
 
-  </main>
+      <hr />
 
-  <hr />
+      <!-- section: 시간표를 보조하는 색상 안내 영역입니다. -->
+      <section>
+        <h2>색상표</h2>
+        <p>시간표에서 각 색이 어떤 과목을 뜻하는지 정리했습니다.</p>
 
-  <footer>
-    <p><a href="index.html">메인으로 돌아가기</a></p>
-  </footer>
+        <table>
+          <caption>과목별 색상 안내</caption>
+
+          <thead>
+            <tr>
+              <th>색상</th>
+              <th>과목</th>
+              <th>요일 / 시간</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <!-- class를 두 개 띄어쓰기로 적으면 둘 다 적용됩니다. -->
+              <!-- swatch는 칸 너비를, subject-math는 색을 담당합니다. -->
+              <td class="swatch subject-math">&nbsp;</td>
+              <td>기초공학수학</td>
+              <td>월 10:00 ~ 12:00</td>
+            </tr>
+            <tr>
+              <td class="swatch subject-chem">&nbsp;</td>
+              <td>화학1및실험</td>
+              <td>월 14:00 ~ 16:00 / 수 14:00 ~ 16:00</td>
+            </tr>
+            <tr>
+              <td class="swatch subject-eng">&nbsp;</td>
+              <td>영어</td>
+              <td>화 09:00 ~ 10:00</td>
+            </tr>
+            <tr>
+              <td class="swatch subject-chapel">&nbsp;</td>
+              <td>채플</td>
+              <td>화 10:00 ~ 11:00</td>
+            </tr>
+            <tr>
+              <td class="swatch subject-phys">&nbsp;</td>
+              <td>물리1및실험</td>
+              <td>화 15:00 ~ 17:00 / 목 15:00 ~ 17:00</td>
+            </tr>
+            <tr>
+              <td class="swatch subject-culture">&nbsp;</td>
+              <td>한류와문화교류</td>
+              <td>수 09:00 ~ 12:00</td>
+            </tr>
+            <tr>
+              <td class="swatch empty">&nbsp;</td>
+              <td>공강</td>
+              <td>수업이 없는 시간</td>
+            </tr>
+            <tr>
+              <td class="swatch lunch">&nbsp;</td>
+              <td>점심시간</td>
+              <td>매일 12:00 ~ 13:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+
+    <hr />
+
+    <footer>
+      <p><a href="index.html">메인으로 돌아가기</a></p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
